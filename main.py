@@ -31,8 +31,8 @@ async def get_data(
     with open('img.png', 'wb') as f:
         f.write(response.content)
 
-    result = Image.open('img.png').convert('RGBA')
-    result.save('img_rgba.png', 'PNG')
+    result = Image.open('/storage/img.png').convert('RGBA')
+    result.save('/storage/img_rgba.png', 'PNG')
     context = {'request': request, 'message': 'Hello', 'url': url1}
     return templates.TemplateResponse('detail.html', {'request': request, **context})
 
